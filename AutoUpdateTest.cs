@@ -12,7 +12,6 @@ namespace AutoUpdateTest
     {
         public override bool Initialise()
         {
-            CheckForFile("Textfile1.txt");
             return true;
         }
 
