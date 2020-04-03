@@ -12,18 +12,18 @@ namespace AutoUpdateTest
     {
         public override bool Initialise()
         {
-            CheckForFile();
+            CheckForFile("Textfile1.txt");
             return true;
         }
 
         public override void Render()
         {
-            CheckForFile();
+            CheckForFile("Textfile1.txt");
+            CheckForFile(Path.Combine(DirectoryFullName, "Textfile1.txt"));
         }
 
-        private void CheckForFile()
+        private void CheckForFile(string path)
         {
-            var path = "Textfile1.txt";
             var exists = File.Exists(path);
             DebugWindow.LogMsg($"{path} -> {exists}");
             if (!exists) return;
