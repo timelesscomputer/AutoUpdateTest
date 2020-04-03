@@ -15,6 +15,7 @@ namespace AutoUpdateTest
             var path = "Textfile1.txt";
             var exists = File.Exists(path);
             DebugWindow.LogMsg($"{path} -> {exists}");
+            if (!exists) return;
             var content = File.ReadAllText(path);
             DebugWindow.LogMsg($"{path} content -> {content}");
             return true;

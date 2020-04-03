@@ -11,5 +11,10 @@ namespace AutoUpdateTest
     public class AutoUpdateTestSettings : ISettings
     {
         public ToggleNode Enable { get; set; }
+
+        public AutoUpdateTestSettings()
+        {
+            Enable = new ToggleNode(true);
+        }     
     }
 }
