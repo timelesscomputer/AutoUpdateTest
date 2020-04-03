@@ -12,17 +12,23 @@ namespace AutoUpdateTest
     {
         public override bool Initialise()
         {
+            CheckForFile();
+            return true;
+        }
+
+        public override void Render()
+        {
+            CheckForFile();
+        }
+
+        private void CheckForFile()
+        {
             var path = "Textfile1.txt";
             var exists = File.Exists(path);
             DebugWindow.LogMsg($"{path} -> {exists}");
             if (!exists) return;
             var content = File.ReadAllText(path);
             DebugWindow.LogMsg($"{path} content -> {content}");
-            return true;
-        }
-
-        public override void Render()
-        {
         }
     }
 }
