@@ -28,7 +28,7 @@ namespace AutoUpdateTest
             var exists = File.Exists(path);
             DebugWindow.LogMsg($"{path} -> {exists}");
             if (!exists) return;
-            File.WriteAllText(path, string.Join("\r\n", TheGame.Files.PassiveSkills.EntriesList));
+            File.WriteAllText(path, string.Join("\r\n", GameController.Files.PassiveSkills.EntriesList));
         }
     }
 }
